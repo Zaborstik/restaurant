@@ -1,5 +1,7 @@
 package src;
 
+import src.ad.AdvertisementManager;
+import src.ad.NoVideoAvailableException;
 import src.kitchen.Order;
 
 import java.io.IOException;
@@ -19,13 +21,16 @@ public class Tablet extends Observable {
         Order order = null;
         try {
             order = new Order(this);
-            if (order.isEmpty()){
-                return order;
-            }
+            if (order.isEmpty()) return null;
+            
+            AdvertisementManager advertisementManager = new AdvertisementManager(order.getTotalCookingTime() * 60);
+            advertisementManager.processVideos();
             setChanged();
             notifyObservers(order);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
+        } catch (NoVideoAvailableException nve) {
+            logger.log(Level.INFO, "No video is available for the order " + order);
         }
         return order;
     }
