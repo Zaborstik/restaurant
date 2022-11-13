@@ -37,4 +37,8 @@ public class Advertisement {
         }
         hits--;
     }
+
+    public boolean isActive() {
+        return hits > 0;
+    }
 }
