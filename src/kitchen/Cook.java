@@ -1,6 +1,8 @@
 package src.kitchen;
 
 import src.ConsoleHelper;
+import src.statistic.StatisticManager;
+import src.statistic.event.CookedOrderEventDataRow;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -19,8 +21,11 @@ public class Cook extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        ConsoleHelper.writeMessage("Start cooking - " + arg);
+        Order order = (Order) arg;
+        ConsoleHelper.writeMessage("Start cooking - " + order);
         setChanged();
-        notifyObservers(arg);
+        notifyObservers(order);
+        CookedOrderEventDataRow row = new CookedOrderEventDataRow(order.toString(), name, order.getTotalCookingTime(), order.getDishes());
+        StatisticManager.getInstance().register(row);
     }
 }
