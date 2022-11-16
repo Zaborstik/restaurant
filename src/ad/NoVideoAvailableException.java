@@ -1,5 +1,4 @@
 package src.ad;
 
-public class NoVideoAvailableException extends RuntimeException{
-
+public class NoVideoAvailableException extends RuntimeException {
 }

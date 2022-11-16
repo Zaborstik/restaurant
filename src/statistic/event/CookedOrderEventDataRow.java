@@ -5,9 +5,9 @@ import src.kitchen.Dish;
 import java.util.Date;
 import java.util.List;
 
-public class CookedOrderEventDataRow implements EventDataRow{
+public class CookedOrderEventDataRow implements EventDataRow {
     private String tabletName;
-    private String cookName; //cooker name
+    private String cookName;
     private int cookingTimeSeconds;
     private List<Dish> cookingDishes;
     private Date currentDate;
@@ -17,11 +17,25 @@ public class CookedOrderEventDataRow implements EventDataRow{
         this.cookName = cookName;
         this.cookingTimeSeconds = cookingTimeSeconds;
         this.cookingDishes = cookingDishes;
-        currentDate = new Date();
+        this.currentDate = new Date();
     }
 
     @Override
     public EventType getType() {
         return EventType.COOKED_ORDER;
+    }
+
+    @Override
+    public Date getDate() {
+        return currentDate;
+    }
+
+    @Override
+    public int getTime() {
+        return cookingTimeSeconds;
+    }
+
+    public String getCookName() {
+        return cookName;
     }
 }

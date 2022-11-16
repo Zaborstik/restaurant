@@ -21,10 +21,10 @@ public class Tablet extends Observable {
         Order order = null;
         try {
             order = new Order(this);
-            if (order.isEmpty()) return null;
-            
+            if (order.isEmpty()) {
+                return null;
+            }
             AdvertisementManager advertisementManager = new AdvertisementManager(order.getTotalCookingTime() * 60);
-
             advertisementManager.processVideos();
             setChanged();
             notifyObservers(order);
@@ -36,7 +36,6 @@ public class Tablet extends Observable {
         return order;
     }
 
-    @Override
     public String toString() {
         return "Tablet{" +
                 "number=" + number +
