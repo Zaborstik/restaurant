@@ -1,4 +1,4 @@
-package src.ad;
+package com.javarush.task.task27.task2712.ad;
 
 import java.util.LinkedList;
 import java.util.List;

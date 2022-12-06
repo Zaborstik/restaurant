@@ -1,6 +1,6 @@
-package src.statistic.event;
+package com.javarush.task.task27.task2712.statistic.event;
 
-import src.kitchen.Dish;
+import com.javarush.task.task27.task2712.kitchen.Dish;
 
 import java.util.Date;
 import java.util.List;

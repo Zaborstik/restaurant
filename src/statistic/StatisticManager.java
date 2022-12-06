@@ -1,10 +1,10 @@
-package src.statistic;
+package com.javarush.task.task27.task2712.statistic;
 
-import src.kitchen.Cook;
-import src.statistic.event.CookedOrderEventDataRow;
-import src.statistic.event.EventDataRow;
-import src.statistic.event.EventType;
-import src.statistic.event.VideoSelectedEventDataRow;
+import com.javarush.task.task27.task2712.kitchen.Cook;
+import com.javarush.task.task27.task2712.statistic.event.CookedOrderEventDataRow;
+import com.javarush.task.task27.task2712.statistic.event.EventDataRow;
+import com.javarush.task.task27.task2712.statistic.event.EventType;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

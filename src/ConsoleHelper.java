@@ -1,6 +1,6 @@
-package src;
+package com.javarush.task.task27.task2712;
 
-import src.kitchen.Dish;
+import com.javarush.task.task27.task2712.kitchen.Dish;
 
 import java.io.BufferedReader;
 import java.io.IOException;

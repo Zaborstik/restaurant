@@ -1,4 +1,4 @@
-package src.ad;
+package com.javarush.task.task27.task2712.ad;
 
 public class Advertisement {
     private Object content;
@@ -41,5 +41,9 @@ public class Advertisement {
 
     public boolean isActive() {
         return hits > 0;
+    }
+
+    public int getHits(){
+        return hits;
     }
 }

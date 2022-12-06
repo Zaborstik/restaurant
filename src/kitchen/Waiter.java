@@ -1,6 +1,6 @@
-package src.kitchen;
+package com.javarush.task.task27.task2712.kitchen;
 
-import src.ConsoleHelper;
+import com.javarush.task.task27.task2712.ConsoleHelper;
 
 import java.util.Observable;
 import java.util.Observer;
