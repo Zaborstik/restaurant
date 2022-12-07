@@ -15,8 +15,8 @@ public class DirectorTablet {
         Collections.sort(list);
 
         for (String key : list) {
-            double amount = 1.0 * profitMap.get(key) / 100;
-            System.out.println(key + " - " + String.format(Locale.ENGLISH, "%.2f", amount));
+            long aLong = profitMap.get(key);
+            System.out.println(key + " - " + (aLong / 100) + "." + (aLong % 100));
         }
     }
 
@@ -39,7 +39,6 @@ public class DirectorTablet {
             System.out.println();
         }
     }
-
 
     public void printActiveVideoSet() {
         List<Advertisement> videoSet = StatisticAdvertisementManager.getInstance().getVideoSet(true);

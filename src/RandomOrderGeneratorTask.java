@@ -1,6 +1,5 @@
 package com.javarush.task.task27.task2712;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RandomOrderGeneratorTask implements Runnable {
@@ -15,14 +14,13 @@ public class RandomOrderGeneratorTask implements Runnable {
     @Override
     public void run() {
         try {
-            while (true){
-                int randIndex = (int) (Math.random()*tablets.size());
-                Tablet tablet = tablets.get(randIndex);
-                tablet.createTestOrder();
+            while (true) {
+                int k = (int) (Math.random() * tablets.size());
+                Tablet expected = tablets.get(k);
+                expected.createTestOrder();
                 Thread.sleep(interval);
             }
-        } catch (Exception e){
-
+        } catch (InterruptedException e) {
         }
     }
 }
